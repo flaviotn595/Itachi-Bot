@@ -242,7 +242,7 @@ footer: Itachi.user.name,
 buttons: buttons,
 headerType: 4
 }
-Itachi.sendMessage(from, buttonMessage, { quoted: ms })
+Itachi.sendMessage(from, buttonMessage, { quoted: msg })
 } 
 break
 case 'mp3':{
@@ -250,7 +250,7 @@ let { yta } = require('./lib/y2mate')
 let quality = args[1] ? args[1] : '128kbps'
 let media = await yta(text, quality)
 if (media.filesize >= 100000) return enviar('arquivo grande '+util.format(media))
-Itachi.sendMessage(from, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg'}, { quoted: ms })
+Itachi.sendMessage(from, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg'}, { quoted: msg })
 }
 break
 
@@ -259,7 +259,7 @@ let { ytv } = require('./lib/y2mate')
 let quality = args[1] ? args[1] : '1080p'
 let media = await ytv(text, quality)
 if (media.filesize >= 100000) return enviar('Arquivo acima do limite '+util.format(media))
-Itachi.sendMessage(from, { video: { url: media.dl_link }, mimetype: 'video/mp4'}, { quoted: ms })
+Itachi.sendMessage(from, { video: { url: media.dl_link }, mimetype: 'video/mp4'}, { quoted: msg })
 }
 break
 

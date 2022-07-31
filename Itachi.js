@@ -227,11 +227,10 @@ color('DATA :','yellow'),color(data,'cyan'),'\n')
 switch(comando){
 
 case 'play': case 'yt': {
-enviar('*_Analisando sua pesquisas 🔍...._*')
 reaction("🔍")
 const search = await yts(`${text}`).catch(e => { enviar('_Não consegui encontrar oque você queria._')})
 anu = await yts( { videoId: `${search.all[0].videoId}` } )
-let buttons = [{buttonId: `${p}mp3 ${anu.url}`, buttonText: {displayText: 'Audio'}, type: 1},{buttonId: `${p}mp4 ${anu.url}`, buttonText: {displayText: 'Video'}, type: 1}]
+let buttons = [{buttonId: `${prefix}mp3 ${anu.url}`, buttonText: {displayText: 'Audio'}, type: 1},{buttonId: `${prefix}mp4 ${anu.url}`, buttonText: {displayText: 'Video'}, type: 1}]
 let buttonMessage = {
 image: { url: anu.thumbnail },
 caption: `_*Pesquisa Encontrada*_

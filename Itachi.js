@@ -227,7 +227,8 @@ color('DATA :','yellow'),color(data,'cyan'),'\n')
 switch(comando){
 
 case 'play': case 'yt': {
-
+enviar('*_Analisando sua pesquisas 🔍...._*')
+reaction("🔍")
 const search = await yts(`${text}`).catch(e => { enviar('_Não consegui encontrar oque você queria._')})
 anu = await yts( { videoId: `${search.all[0].videoId}` } )
 let buttons = [{buttonId: `${prefix}mp3 ${anu.url}`, buttonText: {displayText: 'Audio'}, type: 1},{buttonId: `${prefix}mp4 ${anu.url}`, buttonText: {displayText: 'Video'}, type: 1}]
@@ -244,8 +245,6 @@ headerType: 4
 Itachi.sendMessage(from, buttonMessage, { quoted: ms })
 } 
 break
-enviar('*_Analisando sua pesquisas 🔍...._*')
-reaction("🔍")
 case 'mp3':{
 let { yta } = require('./lib/y2mate')
 let quality = args[1] ? args[1] : '128kbps'

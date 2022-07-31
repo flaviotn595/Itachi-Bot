@@ -282,6 +282,7 @@ let media = await ytv(text, quality)
 if (media.filesize >= 100000) return enviar('Arquivo acima do limite '+util.format(media))
 Itachi.sendMessage(from, { video: { url: media.dl_link }, mimetype: 'video/mp4'}, { quoted: msg })
 }
+reaction('🎥')
 break
 
 case 'mediafire': {

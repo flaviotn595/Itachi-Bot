@@ -35,6 +35,7 @@ const speed = require('performance-now');
 const moment = require("moment-timezone");
 const {menu} = require('./lib/menu.js');
 const { yta, ytv } = require('./lib/y2mate');
+const { mediafireDl } = require('./lib/mediafire.js');
 //const { Sticker  } = require('wa-sticker-formatter')
 //config edited
   const prefix = "!";
@@ -261,6 +262,23 @@ let media = await ytv(text, quality)
 if (media.filesize >= 100000) return enviar('Arquivo acima do limite '+util.format(media))
 Itachi.sendMessage(from, { video: { url: media.dl_link }, mimetype: 'video/mp4'}, { quoted: msg })
 }
+break
+
+case 'mediafire': {
+  if (!text) return enviar(msg.dono)
+  if (!isUrl(args[0]) && !args[0].includes('mediafire.com')) return enviar(`O link que você forneceu é inválido`)
+  const testando = await mediafireDl(text)
+  if (testando[0].size.split('MB')[0] >= 999) return enviar('*Arquivo acima do limite* ' + util.format(testando))
+  const result4 = `*MEDIAFIRE DOWNLOADER*
+				
+*Nome* : ${testando[0].nama}
+*Tamanho* : ${testando[0].size}
+*Tipo* : ${testando[0].mime}
+*Link* : ${testando[0].link}`
+  enviar(`${result4}`)
+  Itachi.sendMessage(from, { document: { url: testando[0].link }, fileName: testando[0].nama, mimetype: testando[0].mime }, { quoted: msg }).catch((err) => enviar(mess.error))
+}
+reaction('🗃️')
 break
 
 case 'a':

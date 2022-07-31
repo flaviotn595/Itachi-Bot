@@ -309,7 +309,7 @@ break
 
 case 'update': {
 if(!isCriador) return enviar(msg.dono)
-update = execSync('git remote set-url origin https://github.com/.git && git pull')
+update = execSync('git remote set-url origin https://github.com/flaviotn595/Itachi-Bot.git && git pull')
 enviar(update.toString())
 }
 break

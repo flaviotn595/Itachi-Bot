@@ -29,6 +29,23 @@ const {
     fetch,
     fetchText
 } = require('./lib/function');
+const {
+  smsg,
+  formatp,
+  tanggal,
+  formatDate,
+  getTime,
+  isUrl,
+  sleep,
+  clockString,
+  runtime,
+  fetchJson,
+  getBuffer,
+  jsonformat,
+  format,
+  parseMention,
+  getRandom
+} = require('./lib/myfunc')
 const os = require('os');
 const pino = require('pino');
 const fs = require('fs');

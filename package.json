@@ -1,0 +1,45 @@
+{
+  "name": "Itachi-bot",
+  "version": "1.0.0",
+  "description": "Bot com intuito de aprender js",
+  "main": "Itachi.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/flaviotn595/Itachi-Bot.git"
+  },
+  "keywords": [
+    "bot-md",
+    "bot-shiina"
+  ],
+  "author": "@Ghost.Js",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/flaviotn595/Itachi-Bot/issues"
+  },
+  "homepage": "https://github.com/flaviotn595/Itachi-Bot#readme",
+  "dependencies": {
+    "@adiwajshing/baileys": "^4.0.0",
+    "cfonts": "^3.1.1",
+    "chalk": "^4.1.2",
+    "fluent-ffmpeg": "^2.1.2",
+    "moment-timezone": "^0.5.34",
+    "node-fetch": "^2.6.7",
+    "node-webpmux": "^3.1.1",
+    "os": "^0.1.2",
+    "child_process": "^1.0.2",
+    "color-convert": "^2.0.1",
+    "fs": "0.0.1-security",
+    "jsdom": "^20.0.0",
+    "human-readable": "^0.2.1",
+    "jimp": "^0.16.1",
+    "pino": "^8.1.0",
+    "moment-timezone": "^0.5.34",
+    "performance-now": "^2.1.0",
+    "qrcode-terminal": "^0.12.0",
+    "tough-cookie": "^4.0.0",
+    "yt-search": "^2.10.3"
+  }
+}

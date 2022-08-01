@@ -190,6 +190,7 @@ headerType: 4,
 /// MÉDIA ETC
 const quoted = ms.quoted ? ms.quoted : msg
 const mime = (quoted.mess || quoted).mimetype || ''
+const qmsg = (quoted.msg || quoted)
 const isMedia = /image|video|sticker|audio/.test(mime)
 
 //selo
@@ -283,6 +284,24 @@ if (media.filesize >= 100000) return enviar('Arquivo acima do limite '+util.form
 Itachi.sendMessage(from, { video: { url: media.dl_link }, mimetype: 'video/mp4'}, { quoted: msg })
 }
 reaction('🎥')
+break
+
+case 's': {
+  if (/image/.test(mime)) {
+    enviar(mess.wait)
+    let media = await Itachi.downloadMediaMessage(qmsg)
+    let encmedia = await Itachi.sendImageAsSticker(from, media, msg, { packname: global.packname, author: global.author })
+    await fs.unlinkSync(encmedia)
+  } else if (/video/.test(mime)) {
+    enviar(mess.wait)
+    if (qmsg.seconds > 11) return from('Máximo de 10 segundos!')
+    let media = await Itachi.downloadMediaMessage(qmsg)
+    let encmedia = await Itachi.sendVideoAsSticker(from, media, msg, { packname: global.packname, author: global.author })
+    await fs.unlinkSync(encmedia)
+  } else {
+    enviar(`Máximo de 10 segundos${prefix}s\nDuração do vídeo/gif 1-9 segundos`)
+  }
+}
 break
 
 case 'mediafire': {

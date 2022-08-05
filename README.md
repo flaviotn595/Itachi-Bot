@@ -3,7 +3,7 @@
 Script WhatsApp Bot Multi Device
 
 <p align="center">
-	<img src="https://telegra.ph/file/bca748e9c51bd09063516.png" width="35%" style="margin-left: auto;margin-right: auto;display: block;">
+	<img src="https://telegra.ph/file/bca748e9c51bd09063516.png" width="100%" style="margin-left: auto;margin-right: auto;display: block;">
 </p>
 <h1 align="center">Ghost-Js</h1>
 
